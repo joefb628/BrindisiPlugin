@@ -1,16 +1,11 @@
 <?php
-/**
-* @package BrindisiPlugin
-*/
 /*
 Plugin Name: Brindisi Plugin
-Plugin URI: josephbrindisi.wordpress.com
 Description: This is the plugin I made using entirely JavaScript.
 Version: 1.0.0
 Author: Joseph Brindisi
-Author URI: josephbrindisi.wordpress.com
+Author URI: google.com
 License: GPLv2 or later
-Text Domain: brindisi-plugin
 */
 
 /*
@@ -31,10 +26,8 @@ Copyright (C) 2019 Joseph Brindisi
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-if ( ! defined( 'ABPATH' ) ) {
-	die;
-}
-
 add_action( 'wp_enqueue_scripts', 'my_custom_script_load' );
-function my_custom_script_load(){
-	wp_enqueue_script( 'my-custom-script', plugin_dir_path( __FILE__ ) . '/myscripts', array( 'jquery' ) );
+function my_custom_script_load() {
+	wp_enqueue_script( 'my-custom-script', plugins_url() . '/brindisi-plugin/myscripts.js', array( 'jquery' ) );
+	wp_enqueue_style( 'style-script', plugins_url() . '/brindisi-plugin/style.css', array() );
+}
