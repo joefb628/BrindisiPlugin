@@ -37,4 +37,4 @@ if ( ! defined( 'ABPATH' ) ) {
 
 add_action( 'wp_enqueue_scripts', 'my_custom_script_load' );
 function my_custom_script_load(){
-	wp_enqueue_script( 'my-custom-script', get_stylesheet_directory_uri() . '/myscripts', array( 'jquery' ) );
+	wp_enqueue_script( 'my-custom-script', plugin_dir_path( __FILE__ ) . '/myscripts', array( 'jquery' ) );
